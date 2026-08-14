@@ -1,0 +1,73 @@
+import { motion } from "framer-motion";
+import { Layers, Ruler, Cpu, Gauge, ShieldCheck, Boxes } from "lucide-react";
+
+const cells = [
+  {
+    span: "md:col-span-7 md:row-span-2",
+    label: "Layer Count",
+    value: "1 – 4",
+    unit: "Layers",
+    desc: "Single-sided, double-sided and multilayer builds up to four copper layers with controlled impedance options.",
+    icon: Layers,
+    big: true,
+  },
+  { span: "md:col-span-5", label: "Min Track / Spacing", value: "0.10", unit: "mm", icon: Ruler },
+  { span: "md:col-span-5", label: "Min Drill", value: "0.20", unit: "mm", icon: Cpu },
+  { span: "md:col-span-4", label: "Base Material", value: "FR-4", unit: "· Al · Rogers", icon: Boxes },
+  { span: "md:col-span-4", label: "Surface Finish", value: "HASL", unit: "· ENIG · OSP", icon: ShieldCheck },
+  { span: "md:col-span-4", label: "Turnaround", value: "24H", unit: "Rapid Proto", icon: Gauge },
+];
+
+const reveal = {
+  hidden: { opacity: 0, y: 40 },
+  visible: (i) => ({ opacity: 1, y: 0, transition: { duration: 0.7, delay: i * 0.06, ease: [0.16, 1, 0.3, 1] } }),
+};
+
+export default function Capabilities() {
+  return (
+    <section id="capabilities" data-testid="capabilities-section" className="max-w-[1600px] mx-auto px-6 md:px-12 py-24 md:py-32">
+      <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div>
+          <p className="font-mono text-xs uppercase tracking-[0.3em] text-copper mb-6">/ Capabilities</p>
+          <h2 className="font-heading font-900 uppercase tracking-tighter leading-[0.9] text-5xl md:text-7xl">
+            The Spec Sheet
+          </h2>
+        </div>
+        <p className="font-mono text-sm text-[#A3A3A3] max-w-sm leading-relaxed">
+          A fabrication window tuned for reliability. Need something outside these bounds? Ask — we engineer to fit.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-px bg-[#262626]">
+        {cells.map((c, i) => {
+          const Icon = c.icon;
+          return (
+            <motion.div
+              key={i}
+              custom={i}
+              variants={reveal}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-60px" }}
+              data-testid={`capability-cell-${i}`}
+              className={`group relative bg-[#0A0A0A] p-8 md:p-10 overflow-hidden ${c.span} flex flex-col justify-between min-h-[180px] ${c.big ? "md:min-h-[380px]" : ""}`}
+            >
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-copper/10 to-transparent pointer-events-none" />
+              <div className="flex items-start justify-between">
+                <span className="font-mono text-xs uppercase tracking-widest text-[#A3A3A3]">{c.label}</span>
+                <Icon className="w-5 h-5 text-[#404040] group-hover:text-copper transition-colors duration-300" strokeWidth={1.5} />
+              </div>
+              <div>
+                <div className={`font-heading font-900 tracking-tighter leading-none ${c.big ? "text-7xl md:text-9xl" : "text-5xl md:text-6xl"}`}>
+                  {c.value}
+                </div>
+                <div className="font-mono text-sm text-copper mt-2">{c.unit}</div>
+                {c.desc && <p className="font-mono text-sm text-[#A3A3A3] mt-6 max-w-md leading-relaxed">{c.desc}</p>}
+              </div>
+            </motion.div>
+          );
+        })}
+      </div>
+    </section>
+  );
+}
