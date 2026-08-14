@@ -37,7 +37,7 @@ export default function Hero() {
           transition={{ delay: 0.3, duration: 0.8 }}
           className="font-mono text-xs md:text-sm uppercase tracking-[0.3em] text-copper mb-6"
         >
-          / PCB Manufacturing — Kundli, Haryana
+          / Complete PCB Solution — Kundli, Est. 1996
         </motion.p>
 
         <h1 className="font-heading font-900 uppercase tracking-tighter leading-[0.85] text-6xl sm:text-7xl md:text-8xl lg:text-[10rem]">
@@ -66,8 +66,9 @@ export default function Hero() {
           transition={{ delay: 1.2, duration: 0.8 }}
           className="mt-8 max-w-xl font-mono text-sm md:text-base text-[#A3A3A3] leading-relaxed"
         >
-          Single, double & up to 4-layer printed circuit boards. Engineered for
-          prototypes and high-volume production — built with obsessive tolerance.
+          Single-sided, double-sided & metal-clad printed circuit boards.
+          Manufactured in Kundli since 1996 for automotive, LED lighting and
+          consumer electronics — built with obsessive tolerance.
         </motion.p>
       </div>
 
@@ -82,9 +83,9 @@ export default function Hero() {
           Scroll
         </div>
         <div className="hidden md:flex gap-10 font-mono text-xs uppercase tracking-widest text-[#A3A3A3]">
-          <span><span className="text-white font-700">01–04</span> Layers</span>
-          <span><span className="text-white font-700">±0.075mm</span> Tolerance</span>
-          <span><span className="text-white font-700">24H</span> Rapid Proto</span>
+          <span><span className="text-white font-700">EST. 1996</span> Heritage</span>
+          <span><span className="text-white font-700">±0.1mm</span> Tolerance</span>
+          <span><span className="text-white font-700">18,500</span> Sq.m / Month</span>
         </div>
       </motion.div>
     </section>

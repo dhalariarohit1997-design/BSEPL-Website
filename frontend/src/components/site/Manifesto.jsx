@@ -3,20 +3,20 @@ import { motion } from "framer-motion";
 const chapters = [
   {
     num: "01",
-    title: "Rooted in Kundli.",
-    body: "From the industrial heart of Haryana, we fabricate printed circuit boards for makers, startups and manufacturers across India. Local roots, exacting global standards.",
+    title: "Since 1996.",
+    body: "Incorporated in 1996 and growing steadily ever since, B.S. Electronics has become a leading manufacturer of printed circuit boards for automotive, LED lighting and consumer electronics across India — local roots, global standards.",
     align: "left",
   },
   {
     num: "02",
-    title: "Copper is a craft.",
-    body: "Every trace, via and pad is treated as an act of precision engineering. We control etching, lamination and drilling to hold tolerances that most bench-top shops cannot.",
+    title: "The PCB is everything.",
+    body: "We recognise the PCB as an integral part of every electronics product. That belief keeps us open, flexible and genuinely willing to understand each customer's requirement — engineering to fit, not to a template.",
     align: "right",
   },
   {
     num: "03",
-    title: "From one to one million.",
-    body: "A single prototype overnight, or a production run of thousands — the same rigorous process, the same inspection discipline, scaled to your ambition.",
+    title: "Built to last.",
+    body: "Our core values are to build products and relationships that last for ages. We improve quality relentlessly through stringent systems and a continuous team-improvement process, backed by IATF 16949 and ISO certification.",
     align: "left",
   },
 ];

@@ -4,18 +4,18 @@ import { Layers, Ruler, Cpu, Gauge, ShieldCheck, Boxes } from "lucide-react";
 const cells = [
   {
     span: "md:col-span-7 md:row-span-2",
-    label: "Layer Count",
-    value: "1 – 4",
-    unit: "Layers",
-    desc: "Single-sided, double-sided and multilayer builds up to four copper layers with controlled impedance options.",
-    icon: Layers,
+    label: "Monthly Capacity",
+    value: "18,500",
+    unit: "Sq. Meters / Month",
+    desc: "Across two dedicated plants — Unit I for single-sided & metal-clad PCBs (15,000 sq.m) and Unit II for double-sided PCBs (3,500 sq.m) — from prototype to high-volume production.",
+    icon: Boxes,
     big: true,
   },
-  { span: "md:col-span-5", label: "Min Track / Spacing", value: "0.10", unit: "mm", icon: Ruler },
-  { span: "md:col-span-5", label: "Min Drill", value: "0.20", unit: "mm", icon: Cpu },
-  { span: "md:col-span-4", label: "Base Material", value: "FR-4", unit: "· Al · Rogers", icon: Boxes },
-  { span: "md:col-span-4", label: "Surface Finish", value: "HASL", unit: "· ENIG · OSP", icon: ShieldCheck },
-  { span: "md:col-span-4", label: "Turnaround", value: "24H", unit: "Rapid Proto", icon: Gauge },
+  { span: "md:col-span-5", label: "Min Track / Spacing", value: "0.20", unit: "mm", icon: Ruler },
+  { span: "md:col-span-5", label: "Min Via Hole", value: "0.30", unit: "mm (finish)", icon: Cpu },
+  { span: "md:col-span-4", label: "Base Material", value: "FR-4", unit: "· Aluminium · CEM", icon: Layers },
+  { span: "md:col-span-4", label: "Surface Finish", value: "HAL", unit: "· OSP · Lacquer", icon: ShieldCheck },
+  { span: "md:col-span-4", label: "Tolerance", value: "±0.1", unit: "mm", icon: Gauge },
 ];
 
 const reveal = {
@@ -34,7 +34,7 @@ export default function Capabilities() {
           </h2>
         </div>
         <p className="font-mono text-sm text-[#A3A3A3] max-w-sm leading-relaxed">
-          A fabrication window tuned for reliability. Need something outside these bounds? Ask — we engineer to fit.
+          A fabrication window tuned for reliability, across single-sided, double-sided and metal-clad boards. Need something outside these bounds? Ask — we engineer to fit.
         </p>
       </div>
 

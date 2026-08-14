@@ -1,12 +1,12 @@
 import Marquee from "react-fast-marquee";
 
 const items = [
-  "UP TO 4-LAYER PCBs",
-  "MADE IN KUNDLI, HARYANA",
-  "RAPID PROTOTYPING",
-  "HIGH VOLUME PRODUCTION",
-  "IPC-A-600 STANDARDS",
-  "FR-4 · ALUMINIUM · ROGERS",
+  "SINGLE-SIDED · DOUBLE-SIDED · METAL-CLAD PCBs",
+  "MADE IN KUNDLI SINCE 1996",
+  "IATF 16949 · ISO 9001 CERTIFIED",
+  "18,500 SQ.M / MONTH CAPACITY",
+  "FR-4 · ALUMINIUM · CEM",
+  "AUTOMOTIVE · LED · CONSUMER ELECTRONICS",
 ];
 
 export default function Ticker() {

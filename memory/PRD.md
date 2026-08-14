@@ -12,6 +12,7 @@ Business website for a printed circuit board manufacturer in Kundli, Haryana tha
 - Hardware engineers / startups / OEMs needing PCB fabrication quotes.
 
 ## Implemented (2026-08-14)
+- Populated site with real company data from BSEPL Company Profile: B.S. Electronics Pvt. Ltd. (est. 1996), address, real capabilities (single/double-sided & metal-clad specs, 18,500 sq.m/mo capacity), certifications (IATF 16949, ISO 9001/14001/45001, RoHS, UL 2025), and client/partner marquee (Polycab, Havells, Halonix, ERD, UTL Solar, Orient, IKIO, HPL, Livguard, Bluebird, Phoenix).
 - Award-level animated marketing site (hero reveal, parallax, marquee, scroll reveals, hover micro-interactions).
 - Quote request form with drag-drop Gerber/ZIP upload → object storage + MongoDB. Verified end-to-end (with & without file).
 - Placeholder contact details (address/phone/email) for later update.

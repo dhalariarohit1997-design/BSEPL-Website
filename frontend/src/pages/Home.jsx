@@ -4,6 +4,8 @@ import Ticker from "@/components/site/Ticker";
 import Manifesto from "@/components/site/Manifesto";
 import Capabilities from "@/components/site/Capabilities";
 import Gallery from "@/components/site/Gallery";
+import Certifications from "@/components/site/Certifications";
+import Clients from "@/components/site/Clients";
 import QuoteForm from "@/components/site/QuoteForm";
 import Contact from "@/components/site/Contact";
 
@@ -16,6 +18,8 @@ export default function Home() {
       <Manifesto />
       <Capabilities />
       <Gallery />
+      <Certifications />
+      <Clients />
       <QuoteForm />
       <Contact />
     </main>

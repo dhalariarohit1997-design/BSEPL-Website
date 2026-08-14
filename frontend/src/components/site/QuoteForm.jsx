@@ -6,12 +6,12 @@ import { UploadCloud, FileCheck2, Loader2, ArrowRight } from "lucide-react";
 
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
-const layerOptions = ["1 Layer", "2 Layer", "3 Layer", "4 Layer"];
+const layerOptions = ["Single-Sided", "Double-Sided", "Metal-Clad (Aluminium)"];
 
 export default function QuoteForm() {
   const [form, setForm] = useState({
     name: "", email: "", company: "", phone: "",
-    layers: "2 Layer", quantity: "", message: "",
+    layers: "Double-Sided", quantity: "", message: "",
   });
   const [file, setFile] = useState(null);
   const [dragging, setDragging] = useState(false);
@@ -39,7 +39,7 @@ export default function QuoteForm() {
       if (file) data.append("file", file);
       await axios.post(`${API}/quote`, data, { headers: { "Content-Type": "multipart/form-data" } });
       toast.success("Quote request received. We'll be in touch shortly.");
-      setForm({ name: "", email: "", company: "", phone: "", layers: "2 Layer", quantity: "", message: "" });
+      setForm({ name: "", email: "", company: "", phone: "", layers: "Double-Sided", quantity: "", message: "" });
       setFile(null);
     } catch (err) {
       toast.error("Something went wrong. Please try again.");
@@ -61,7 +61,8 @@ export default function QuoteForm() {
           </h2>
           <p className="font-mono text-sm text-[#A3A3A3] leading-relaxed max-w-sm">
             Attach your Gerber or design files (ZIP), tell us the spec, and get a
-            fabrication quote back fast. Up to 4 layers, proto to production.
+            fabrication quote back fast. Single-sided, double-sided & metal-clad —
+            proto to production.
           </p>
         </div>
 

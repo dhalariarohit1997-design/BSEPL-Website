@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 import { CircuitBoard } from "lucide-react";
 
 const links = [
+  { label: "About", href: "#manifesto" },
   { label: "Capabilities", href: "#capabilities" },
-  { label: "Studio", href: "#manifesto" },
-  { label: "Gallery", href: "#gallery" },
+  { label: "Clients", href: "#clients" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -41,7 +41,7 @@ export default function Navbar() {
         >
           <CircuitBoard className="w-6 h-6 text-copper" strokeWidth={1.5} />
           <span className="font-heading font-900 text-lg tracking-tighter uppercase">
-            Kundli<span className="text-copper">PCB</span>
+            B.S.<span className="text-copper">Electronics</span>
           </span>
         </button>
 
