@@ -33,13 +33,13 @@ export default function Navbar() {
         scrolled ? "bg-white/90 backdrop-blur-md border-b border-[#E2E6EF]" : "bg-transparent"
       }`}
     >
-      <div className="max-w-[1600px] mx-auto px-6 md:px-12 h-20 flex items-center justify-between">
+      <div className="max-w-[1600px] mx-auto px-6 md:px-12 h-24 flex items-center justify-between">
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           data-testid="nav-logo"
           className="flex items-center gap-3"
         >
-          <img src="/bsepl-logo.png" alt="B.S. Electronics — Complete PCB Solution" className="h-11 md:h-12 w-auto" />
+          <img src="/bsepl-logo.png" alt="B.S. Electronics — Complete PCB Solution" className="h-16 md:h-20 w-auto" />
         </button>
 
         <div className="hidden md:flex items-center gap-9">

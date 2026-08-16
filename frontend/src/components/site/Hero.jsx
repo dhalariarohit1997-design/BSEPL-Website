@@ -31,8 +31,8 @@ export default function Hero() {
   const scrollTo = (id) => document.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
 
   return (
-    <section ref={ref} data-testid="hero-section" className="relative min-h-screen w-full bg-white pt-20 overflow-hidden">
-      <div className="max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-2 min-h-[calc(100vh-5rem)]">
+    <section ref={ref} data-testid="hero-section" className="relative min-h-screen w-full bg-white pt-24 overflow-hidden">
+      <div className="max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-2 min-h-[calc(100vh-6rem)]">
         <div className="flex flex-col justify-center px-6 md:px-12 py-16 lg:py-0">
           <motion.p
             initial={{ opacity: 0 }}
