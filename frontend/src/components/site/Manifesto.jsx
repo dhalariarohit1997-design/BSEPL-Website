@@ -6,14 +6,14 @@ const chapters = [
     title: "Since 1996.",
     body: "Incorporated in 1996 and growing steadily ever since, B.S. Electronics has become a leading manufacturer of printed circuit boards — serving automotive, industrial automation, consumer electronics and LED lighting customers across India with local roots and global standards.",
     align: "left",
-    bg: "https://images.unsplash.com/photo-1595798896730-9fdf2e709649?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzV8MHwxfHNlYXJjaHwxfHxpbmR1c3RyaWFsJTIwZmFjdG9yeSUyMGJ1aWxkaW5nJTIwZXh0ZXJpb3J8ZW58MHx8fHwxNzg2ODU5NjEyfDA&ixlib=rb-4.1.0&q=85",
+    bg: "/about/building.jpeg",
   },
   {
     num: "02",
     title: "The PCB is everything.",
     body: "We recognise the PCB as an integral part of every electronics product. That belief keeps us open, flexible and genuinely willing to understand each customer's requirement — engineering to fit, not to a template.",
     align: "right",
-    bg: "https://images.unsplash.com/photo-1592659762303-90081d34b277?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjV8MHwxfHNlYXJjaHwyfHxwcmludGVkJTIwY2lyY3VpdCUyMGJvYXJkJTIwbWFjcm98ZW58MHx8fHwxNzg2NzIxMjA1fDA&ixlib=rb-4.1.0&q=85",
+    bg: "/about/circuit.jpeg",
   },
   {
     num: "03",
