@@ -7,6 +7,7 @@ const chapters = [
     body: "Incorporated in 1996 and growing steadily ever since, B.S. Electronics has become a leading manufacturer of printed circuit boards — serving automotive, industrial automation, consumer electronics and LED lighting customers across India with local roots and global standards.",
     align: "left",
     bg: "/about/building.jpeg",
+    fit: "contain",
   },
   {
     num: "02",
@@ -58,10 +59,10 @@ export default function Manifesto() {
                 src={c.bg}
                 alt=""
                 aria-hidden="true"
-                className="absolute inset-0 w-full h-full object-cover opacity-[0.13] group-hover:opacity-[0.18] transition-opacity duration-700 pointer-events-none"
+                className={`absolute inset-0 w-full h-full ${c.fit === "contain" ? "object-contain object-center" : "object-cover"} opacity-[0.28] group-hover:opacity-[0.38] transition-opacity duration-700 pointer-events-none`}
               />
               <div
-                className={`absolute inset-0 pointer-events-none bg-gradient-to-${isRight ? "l" : "r"} from-white via-white/70 to-white/20`}
+                className={`absolute inset-0 pointer-events-none bg-gradient-to-${isRight ? "l" : "r"} from-white via-white/55 to-transparent`}
               />
               <div
                 className={`relative z-10 p-10 md:p-16 min-h-[380px] md:min-h-[440px] flex flex-col justify-center max-w-2xl ${
