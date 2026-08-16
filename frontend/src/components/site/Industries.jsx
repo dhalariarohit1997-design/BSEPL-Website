@@ -35,7 +35,7 @@ export default function Industries() {
                 src={ind.bg}
                 alt=""
                 aria-hidden="true"
-                className="absolute inset-0 w-full h-full object-cover opacity-[0.16] group-hover:opacity-[0.26] transition-opacity duration-500 pointer-events-none"
+                className="absolute inset-0 w-full h-full object-cover opacity-[0.21] group-hover:opacity-[0.31] transition-opacity duration-500 pointer-events-none"
               />
               <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-white via-white/75 to-white/45" />
 
