@@ -34,15 +34,6 @@ export default function Hero() {
     <section ref={ref} data-testid="hero-section" className="relative min-h-screen w-full bg-white pt-24 overflow-hidden">
       <div className="max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-2 min-h-[calc(100vh-6rem)]">
         <div className="flex flex-col justify-center px-6 md:px-12 py-16 lg:py-0">
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
-            className="font-heading text-xl md:text-3xl font-900 uppercase tracking-[0.15em] text-[#E1251B] mb-6"
-          >
-            B.S. Electronics Pvt. Ltd.
-          </motion.p>
-
           <h1 className="font-heading font-900 uppercase tracking-tighter leading-[0.85] text-6xl sm:text-7xl md:text-8xl text-[#0B1533]">
             {lines.map((line, i) => (
               <span key={i} className="line-mask">

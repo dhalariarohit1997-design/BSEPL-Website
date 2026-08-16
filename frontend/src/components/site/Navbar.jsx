@@ -40,6 +40,7 @@ export default function Navbar() {
           className="flex items-center gap-3"
         >
           <img src="/bsepl-logo.png" alt="B.S. Electronics — Complete PCB Solution" className="h-16 md:h-20 w-auto" />
+          <span className="hidden xl:block font-heading font-900 uppercase tracking-tight text-[#E1251B] text-sm 2xl:text-base leading-none whitespace-nowrap">B.S. Electronics<br />Pvt. Ltd.</span>
         </button>
 
         <div className="hidden md:flex items-center gap-9">
