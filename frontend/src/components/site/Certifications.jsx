@@ -8,6 +8,7 @@ const certs = [
   { name: "ISO 45001:2018", note: "Health & Safety" },
   { name: "UL", note: "Certified" },
   { name: "RoHS", note: "Compliant" },
+  { name: "MSME ZED Gold", note: "Zero Defect Zero Effect", wide: true },
 ];
 
 export default function Certifications() {
@@ -26,7 +27,7 @@ export default function Certifications() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-px bg-[#E2E6EF] border border-[#E2E6EF]">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-[#E2E6EF] border border-[#E2E6EF]">
           {certs.map((c, i) => {
             const isBlue = i % 2 === 1;
             return (
@@ -37,7 +38,7 @@ export default function Certifications() {
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.6, delay: i * 0.05, ease: [0.16, 1, 0.3, 1] }}
                 data-testid={`cert-${i}`}
-                className={`${isBlue ? "bg-[#2E3192]" : "bg-white"} p-8 flex flex-col gap-4 transition-colors duration-300`}
+                className={`${isBlue ? "bg-[#2E3192]" : "bg-white"} ${c.wide ? "col-span-2" : ""} p-8 flex flex-col gap-4 transition-colors duration-300`}
               >
                 <BadgeCheck className={`w-6 h-6 ${isBlue ? "text-white" : "text-[#2E3192]"}`} strokeWidth={1.5} />
                 <div>

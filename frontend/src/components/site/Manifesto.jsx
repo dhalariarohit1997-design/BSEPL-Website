@@ -16,6 +16,7 @@ const chapters = [
     body: "We recognise the PCB as an integral part of every electronics product. That belief keeps us open, flexible and genuinely willing to understand each customer's requirement — engineering to fit, not to a template.",
     align: "right",
     bg: "/about/circuit.jpeg",
+    dim: true,
   },
   {
     num: "03",
@@ -60,7 +61,7 @@ export default function Manifesto() {
                 src={c.bg}
                 alt=""
                 aria-hidden="true"
-                className={`absolute inset-0 w-full h-full ${c.fit === "contain" ? "object-contain object-center" : `object-cover ${c.pos || "object-center"}`} opacity-[0.28] group-hover:opacity-[0.38] transition-opacity duration-700 pointer-events-none`}
+                className={`absolute inset-0 w-full h-full ${c.fit === "contain" ? "object-contain object-center" : `object-cover ${c.pos || "object-center"}`} ${c.dim ? "opacity-[0.14] group-hover:opacity-[0.2]" : "opacity-[0.28] group-hover:opacity-[0.38]"} transition-opacity duration-700 pointer-events-none`}
               />
               <div
                 className={`absolute inset-0 pointer-events-none bg-gradient-to-${isRight ? "l" : "r"} from-white via-white/55 to-transparent`}

@@ -1,11 +1,12 @@
 import { motion } from "framer-motion";
-import { Car, Cog, Cpu, Lightbulb } from "lucide-react";
+import { Car, Cog, Cpu, Lightbulb, RadioTower } from "lucide-react";
 
 const industries = [
   { icon: Car, name: "Automotive", desc: "Reliability-first boards built to IATF 16949 for demanding automotive electronics." },
   { icon: Cog, name: "Industrial Automation", desc: "Rugged PCBs for controllers, drives and factory automation systems." },
   { icon: Cpu, name: "Consumer Electronics", desc: "High-volume, cost-optimised boards for everyday connected devices." },
   { icon: Lightbulb, name: "LED Lighting", desc: "Metal-clad aluminium PCBs engineered for superior thermal performance." },
+  { icon: RadioTower, name: "Telecom", desc: "Precision boards for networking, communication and signal infrastructure." },
 ];
 
 export default function Industries() {
@@ -16,10 +17,11 @@ export default function Industries() {
         Where Our<br />Boards Go.
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-[#E2E6EF] border border-[#E2E6EF]">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-px bg-[#E2E6EF] border border-[#E2E6EF]">
         {industries.map((ind, i) => {
           const Icon = ind.icon;
           const isBlue = i % 2 === 1;
+          const isLast = i === industries.length - 1;
           return (
             <motion.div
               key={i}
@@ -28,7 +30,7 @@ export default function Industries() {
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.7, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
               data-testid={`industry-${i}`}
-              className={`${isBlue ? "bg-[#2E3192]" : "bg-white"} p-8 md:p-10 flex flex-col gap-6 min-h-[260px] transition-colors duration-300`}
+              className={`${isBlue ? "bg-[#2E3192]" : "bg-white"} ${isLast ? "md:col-span-2 lg:col-span-1" : ""} p-8 md:p-10 flex flex-col gap-6 min-h-[260px] transition-colors duration-300`}
             >
               <div className="flex items-center justify-between">
                 <span className={`font-mono text-xs ${isBlue ? "text-white/70" : "text-[#2E3192]"}`}>0{i + 1}</span>
