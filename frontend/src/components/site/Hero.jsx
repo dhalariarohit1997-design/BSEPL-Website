@@ -91,12 +91,12 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.6, duration: 0.8 }}
-            className="mt-14 grid grid-cols-2 lg:grid-cols-4 gap-px bg-[#E2E6EF] border border-[#E2E6EF] max-w-2xl"
+            className="mt-14 grid grid-cols-2 lg:grid-cols-4 gap-px bg-[#E2E6EF] border border-[#E2E6EF] max-w-xl"
           >
             {stats.map((s) => (
-              <div key={s.k} className="bg-white px-4 py-5">
-                <div className="font-heading font-900 text-2xl md:text-3xl tracking-tight text-[#0B1533]">{s.k}</div>
-                <div className="font-mono text-[10px] uppercase tracking-widest text-[#5A6684] mt-1">{s.v}</div>
+              <div key={s.k} className="bg-white px-3 py-3">
+                <div className="font-heading font-900 text-xl md:text-2xl tracking-tight text-[#0B1533]">{s.k}</div>
+                <div className="font-mono text-[9px] uppercase tracking-wider text-[#5A6684] mt-1 leading-tight">{s.v}</div>
               </div>
             ))}
           </motion.div>

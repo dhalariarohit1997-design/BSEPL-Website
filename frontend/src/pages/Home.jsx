@@ -18,10 +18,10 @@ export default function Home() {
       <Ticker />
       <Manifesto />
       <Capabilities />
-      <Industries />
-      <Gallery />
       <Certifications />
+      <Industries />
       <Clients />
+      <Gallery />
       <QuoteForm />
       <Contact />
     </main>
