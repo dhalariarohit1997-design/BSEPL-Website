@@ -27,23 +27,26 @@ export default function Certifications() {
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-px bg-[#E2E6EF] border border-[#E2E6EF]">
-          {certs.map((c, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.6, delay: i * 0.05, ease: [0.16, 1, 0.3, 1] }}
-              data-testid={`cert-${i}`}
-              className="group bg-white p-8 flex flex-col gap-4 hover:bg-[#2E3192] transition-colors duration-300"
-            >
-              <BadgeCheck className="w-6 h-6 text-[#2E3192] group-hover:text-white transition-colors duration-300" strokeWidth={1.5} />
-              <div>
-                <p className="font-heading font-700 text-lg tracking-tight leading-none text-[#0B1533] group-hover:text-white transition-colors duration-300">{c.name}</p>
-                <p className="font-mono text-xs uppercase tracking-widest text-[#5A6684] group-hover:text-white/80 transition-colors duration-300 mt-2">{c.note}</p>
-              </div>
-            </motion.div>
-          ))}
+          {certs.map((c, i) => {
+            const isBlue = i % 2 === 1;
+            return (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.6, delay: i * 0.05, ease: [0.16, 1, 0.3, 1] }}
+                data-testid={`cert-${i}`}
+                className={`${isBlue ? "bg-[#2E3192]" : "bg-white"} p-8 flex flex-col gap-4 transition-colors duration-300`}
+              >
+                <BadgeCheck className={`w-6 h-6 ${isBlue ? "text-white" : "text-[#2E3192]"}`} strokeWidth={1.5} />
+                <div>
+                  <p className={`font-heading font-700 text-lg tracking-tight leading-none ${isBlue ? "text-white" : "text-[#0B1533]"}`}>{c.name}</p>
+                  <p className={`font-mono text-xs uppercase tracking-widest mt-2 ${isBlue ? "text-white/80" : "text-[#5A6684]"}`}>{c.note}</p>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

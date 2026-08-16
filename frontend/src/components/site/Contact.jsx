@@ -20,10 +20,10 @@ export default function Contact() {
                 Plot No. 327, Phase-V, Sector-56, EHTP Industrial Area, Kundli, Sonepat, Haryana 131028, India
               </p>
             </div>
-            <div data-testid="contact-detail-phone" className="bg-white p-8">
-              <Phone className="w-5 h-5 text-[#2E3192] mb-4" strokeWidth={1.5} />
-              <p className="font-mono text-xs uppercase tracking-widest text-[#5A6684] mb-2">Phone</p>
-              <a href="tel:+918708348204" className="font-mono text-sm text-[#0B1533] hover:text-[#2E3192] transition-colors duration-300">+91 87083 48204</a>
+            <div data-testid="contact-detail-phone" className="bg-[#2E3192] p-8">
+              <Phone className="w-5 h-5 text-white mb-4" strokeWidth={1.5} />
+              <p className="font-mono text-xs uppercase tracking-widest text-white/70 mb-2">Phone</p>
+              <a href="tel:+918708348204" className="font-mono text-sm text-white hover:text-white/80 transition-colors duration-300">+91 87083 48204</a>
             </div>
             <div data-testid="contact-detail-email" className="bg-white p-8">
               <Mail className="w-5 h-5 text-[#2E3192] mb-4" strokeWidth={1.5} />

@@ -93,12 +93,15 @@ export default function Hero() {
             transition={{ delay: 1.6, duration: 0.8 }}
             className="mt-14 grid grid-cols-2 lg:grid-cols-4 gap-px bg-[#E2E6EF] border border-[#E2E6EF] max-w-xl"
           >
-            {stats.map((s) => (
-              <div key={s.k} className="bg-white px-3 py-3">
-                <div className="font-heading font-900 text-xl md:text-2xl tracking-tight text-[#0B1533]">{s.k}</div>
-                <div className="font-mono text-[9px] uppercase tracking-wider text-[#5A6684] mt-1 leading-tight">{s.v}</div>
-              </div>
-            ))}
+            {stats.map((s, i) => {
+              const isBlue = i % 2 === 1;
+              return (
+                <div key={s.k} className={`${isBlue ? "bg-[#2E3192]" : "bg-white"} px-3 py-3`}>
+                  <div className={`font-heading font-900 text-xl md:text-2xl tracking-tight ${isBlue ? "text-white" : "text-[#0B1533]"}`}>{s.k}</div>
+                  <div className={`font-mono text-[9px] uppercase tracking-wider mt-1 leading-tight ${isBlue ? "text-white/70" : "text-[#5A6684]"}`}>{s.v}</div>
+                </div>
+              );
+            })}
           </motion.div>
         </div>
 

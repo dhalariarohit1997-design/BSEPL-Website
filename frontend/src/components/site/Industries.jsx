@@ -19,6 +19,7 @@ export default function Industries() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-[#E2E6EF] border border-[#E2E6EF]">
         {industries.map((ind, i) => {
           const Icon = ind.icon;
+          const isBlue = i % 2 === 1;
           return (
             <motion.div
               key={i}
@@ -27,17 +28,17 @@ export default function Industries() {
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.7, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
               data-testid={`industry-${i}`}
-              className="group bg-white p-8 md:p-10 flex flex-col gap-6 min-h-[260px] hover:bg-[#2E3192] transition-colors duration-300"
+              className={`${isBlue ? "bg-[#2E3192]" : "bg-white"} p-8 md:p-10 flex flex-col gap-6 min-h-[260px] transition-colors duration-300`}
             >
               <div className="flex items-center justify-between">
-                <span className="font-mono text-xs text-[#2E3192] group-hover:text-white/70 transition-colors duration-300">0{i + 1}</span>
-                <Icon className="w-7 h-7 text-[#2E3192] group-hover:text-white transition-colors duration-300" strokeWidth={1.5} />
+                <span className={`font-mono text-xs ${isBlue ? "text-white/70" : "text-[#2E3192]"}`}>0{i + 1}</span>
+                <Icon className={`w-7 h-7 ${isBlue ? "text-white" : "text-[#2E3192]"}`} strokeWidth={1.5} />
               </div>
               <div className="mt-auto">
-                <h3 className="font-heading font-700 text-2xl tracking-tight text-[#0B1533] group-hover:text-white transition-colors duration-300 leading-tight">
+                <h3 className={`font-heading font-700 text-2xl tracking-tight leading-tight ${isBlue ? "text-white" : "text-[#0B1533]"}`}>
                   {ind.name}
                 </h3>
-                <p className="font-mono text-xs text-[#5A6684] group-hover:text-white/80 transition-colors duration-300 mt-3 leading-relaxed">
+                <p className={`font-mono text-xs mt-3 leading-relaxed ${isBlue ? "text-white/80" : "text-[#5A6684]"}`}>
                   {ind.desc}
                 </p>
               </div>

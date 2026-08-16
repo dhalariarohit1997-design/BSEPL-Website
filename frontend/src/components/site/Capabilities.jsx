@@ -42,6 +42,7 @@ export default function Capabilities() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-px bg-[#E2E6EF] border border-[#E2E6EF]">
           {cells.map((c, i) => {
             const Icon = c.icon;
+            const isBlue = i % 2 === 1;
             return (
               <motion.div
                 key={i}
@@ -51,18 +52,18 @@ export default function Capabilities() {
                 whileInView="visible"
                 viewport={{ once: true, margin: "-60px" }}
                 data-testid={`capability-cell-${i}`}
-                className={`group relative bg-white p-8 md:p-10 overflow-hidden ${c.span} flex flex-col justify-between min-h-[180px] ${c.big ? "md:min-h-[380px]" : ""} hover:bg-[#F2F4FA] transition-colors duration-300`}
+                className={`group relative ${isBlue ? "bg-[#2E3192]" : "bg-white hover:bg-[#F2F4FA]"} p-8 md:p-10 overflow-hidden ${c.span} flex flex-col justify-between min-h-[180px] ${c.big ? "md:min-h-[380px]" : ""} transition-colors duration-300`}
               >
                 <div className="flex items-start justify-between">
-                  <span className="font-mono text-xs uppercase tracking-widest text-[#5A6684]">{c.label}</span>
-                  <Icon className="w-5 h-5 text-[#C7CEDE] group-hover:text-[#2E3192] transition-colors duration-300" strokeWidth={1.5} />
+                  <span className={`font-mono text-xs uppercase tracking-widest ${isBlue ? "text-white/70" : "text-[#5A6684]"}`}>{c.label}</span>
+                  <Icon className={`w-5 h-5 transition-colors duration-300 ${isBlue ? "text-white" : "text-[#C7CEDE] group-hover:text-[#2E3192]"}`} strokeWidth={1.5} />
                 </div>
                 <div>
-                  <div className={`font-heading font-900 tracking-tighter leading-none text-[#0B1533] ${c.big ? "text-7xl md:text-9xl" : "text-5xl md:text-6xl"}`}>
+                  <div className={`font-heading font-900 tracking-tighter leading-none ${isBlue ? "text-white" : "text-[#0B1533]"} ${c.big ? "text-7xl md:text-9xl" : "text-5xl md:text-6xl"}`}>
                     {c.value}
                   </div>
-                  <div className="font-mono text-sm text-[#2E3192] mt-2">{c.unit}</div>
-                  {c.desc && <p className="font-mono text-sm text-[#5A6684] mt-6 max-w-md leading-relaxed">{c.desc}</p>}
+                  <div className={`font-mono text-sm mt-2 ${isBlue ? "text-white/80" : "text-[#2E3192]"}`}>{c.unit}</div>
+                  {c.desc && <p className={`font-mono text-sm mt-6 max-w-md leading-relaxed ${isBlue ? "text-white/80" : "text-[#5A6684]"}`}>{c.desc}</p>}
                 </div>
               </motion.div>
             );
