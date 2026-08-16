@@ -44,7 +44,7 @@ export default function Clients() {
               <img
                 src={c.logo}
                 alt={c.name}
-                className="max-h-[80%] max-w-[88%] w-auto object-contain transition-transform duration-500 group-hover:scale-105"
+                className="max-h-[95%] max-w-[96%] w-auto object-contain transition-transform duration-500 group-hover:scale-105"
               />
             )}
           </motion.div>
