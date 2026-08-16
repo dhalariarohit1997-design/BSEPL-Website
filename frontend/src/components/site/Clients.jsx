@@ -5,7 +5,7 @@ const clients = [
   { name: "Livguard", logo: "/clients/livguard.png", fit: "cover" },
   { name: "Phoenix Contact", logo: "/clients/phoenix.webp", fit: "contain" },
   { name: "Lava International", logo: "/clients/lava.png", fit: "cover" },
-  { name: "Deltron (CDIL)", logo: null },
+  { name: "Deltron (CDIL)", logo: "/clients/deltron.png", fit: "contain" },
   { name: "Elin Electronics", logo: "/clients/elin.png", fit: "cover" },
 ];
 
