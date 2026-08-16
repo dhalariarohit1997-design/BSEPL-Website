@@ -14,7 +14,7 @@ export default function Clients() {
     <section id="clients" data-testid="clients-section" className="max-w-[1600px] mx-auto px-6 md:px-12 py-24 md:py-32 bg-white">
       <div className="mb-16">
         <p className="font-mono text-xs uppercase tracking-[0.3em] text-[#2E3192] mb-6">/ Our Clients</p>
-        <h2 className="font-heading font-900 uppercase tracking-tighter leading-[0.9] text-5xl md:text-7xl text-[#0B1533] max-w-3xl">
+        <h2 className="font-heading font-900 uppercase tracking-tighter leading-[0.9] text-4xl sm:text-5xl md:text-6xl text-[#0B1533] md:whitespace-nowrap">
           Trusted By India's Best.
         </h2>
       </div>

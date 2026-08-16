@@ -91,14 +91,14 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.6, duration: 0.8 }}
-            className="mt-14 grid grid-cols-2 lg:grid-cols-4 gap-px bg-[#E2E6EF] border border-[#E2E6EF] max-w-xl"
+            className="mt-14 grid grid-cols-2 lg:grid-cols-4 gap-px bg-[#E2E6EF] border border-[#E2E6EF] max-w-2xl"
           >
             {stats.map((s, i) => {
               const isBlue = i % 2 === 1;
               return (
-                <div key={s.k} className={`${isBlue ? "bg-[#2E3192]" : "bg-white"} px-3 py-3`}>
-                  <div className={`font-heading font-900 text-xl md:text-2xl tracking-tight ${isBlue ? "text-white" : "text-[#0B1533]"}`}>{s.k}</div>
-                  <div className={`font-mono text-[9px] uppercase tracking-wider mt-1 leading-tight ${isBlue ? "text-white/70" : "text-[#5A6684]"}`}>{s.v}</div>
+                <div key={s.k} className={`${isBlue ? "bg-[#2E3192]" : "bg-white"} px-5 py-6`}>
+                  <div className={`font-heading font-900 text-3xl md:text-4xl tracking-tight ${isBlue ? "text-white" : "text-[#0B1533]"}`}>{s.k}</div>
+                  <div className={`font-mono text-[10px] md:text-xs uppercase tracking-wider mt-2 leading-tight ${isBlue ? "text-white/70" : "text-[#5A6684]"}`}>{s.v}</div>
                 </div>
               );
             })}
@@ -111,12 +111,11 @@ export default function Hero() {
           </motion.div>
           <div className="absolute inset-0 bg-gradient-to-tr from-[#2E3192]/25 via-transparent to-transparent" />
           <div className="absolute top-6 left-6 w-3 h-3 bg-[#E1251B]" />
+          <div className="hidden lg:flex absolute bottom-6 left-6 items-center gap-3 font-mono text-xs uppercase tracking-widest text-white z-10">
+            <ArrowDown className="w-4 h-4 animate-bounce" />
+            Scroll
+          </div>
         </div>
-      </div>
-
-      <div className="hidden lg:flex absolute bottom-6 left-6 items-center gap-3 font-mono text-xs uppercase tracking-widest text-[#5A6684] z-10">
-        <ArrowDown className="w-4 h-4 animate-bounce text-[#2E3192]" />
-        Scroll
       </div>
     </section>
   );
