@@ -16,9 +16,10 @@ const lineVariants = {
 };
 
 const stats = [
-  { k: "EST. 1996", v: "Heritage" },
-  { k: "18,500", v: "Sq.m / Month" },
-  { k: "±0.1mm", v: "Tolerance" },
+  { k: "30+", v: "Years of Experience" },
+  { k: "200+", v: "Happy Customers" },
+  { k: "150+", v: "Employees" },
+  { k: "UL", v: "Certified Products" },
 ];
 
 export default function Hero() {
@@ -90,7 +91,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.6, duration: 0.8 }}
-            className="mt-14 grid grid-cols-3 gap-px bg-[#E2E6EF] border border-[#E2E6EF] max-w-lg"
+            className="mt-14 grid grid-cols-2 lg:grid-cols-4 gap-px bg-[#E2E6EF] border border-[#E2E6EF] max-w-2xl"
           >
             {stats.map((s) => (
               <div key={s.k} className="bg-white px-4 py-5">
