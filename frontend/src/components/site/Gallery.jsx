@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const shots = [
   { url: "/factory/factory2.jpeg", alt: "Electroplating line with PCB panels on hoist" },
-  { url: "/factory/factory7.jpeg", alt: "CNC drilling machine" },
+  { url: "/factory/factory10.jpeg", alt: "Multi-spindle CNC drilling machine" },
   { url: "/factory/factory3.jpeg", alt: "Photo-imaging and exposure room" },
   { url: "/factory/factory6.jpeg", alt: "Operators at punching machines" },
   { url: "/factory/factory5.jpeg", alt: "Wet process rinsing tanks" },

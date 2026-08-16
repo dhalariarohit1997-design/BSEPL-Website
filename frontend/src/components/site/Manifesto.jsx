@@ -70,11 +70,11 @@ export default function Manifesto() {
                   isRight ? "md:ml-auto md:text-right md:items-end" : ""
                 }`}
               >
-                <span className="font-mono text-[#2E3192] text-xl md:text-2xl mb-5 tracking-tight">{c.num}</span>
-                <h3 className="font-heading font-900 uppercase tracking-tighter leading-[0.9] text-4xl sm:text-5xl md:text-6xl mb-6 text-[#0B1533]">
+                <span className="font-mono text-black text-xl md:text-2xl mb-5 tracking-tight">{c.num}</span>
+                <h3 className="font-heading font-900 uppercase tracking-tighter leading-[0.9] text-4xl sm:text-5xl md:text-6xl mb-6 text-black">
                   {c.title}
                 </h3>
-                <p className="font-mono text-sm md:text-base text-[#5A6684] leading-relaxed max-w-xl">
+                <p className="font-mono text-sm md:text-base text-black leading-relaxed max-w-xl">
                   {c.body}
                 </p>
               </div>

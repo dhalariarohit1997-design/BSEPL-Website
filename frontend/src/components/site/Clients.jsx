@@ -31,7 +31,7 @@ export default function Clients() {
             className="group relative bg-white overflow-hidden aspect-[16/9] flex items-center justify-center"
           >
             {!c.logo ? (
-              <span className="font-heading font-900 uppercase tracking-tighter text-2xl md:text-3xl text-[#0B1533] group-hover:text-[#2E3192] transition-colors duration-300 text-center leading-tight px-4">
+              <span className="font-heading font-900 uppercase tracking-tighter text-4xl md:text-5xl text-[#0B1533] group-hover:text-[#2E3192] transition-colors duration-300 text-center leading-none px-4">
                 {c.name}
               </span>
             ) : c.fit === "cover" ? (

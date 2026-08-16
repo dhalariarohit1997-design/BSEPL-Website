@@ -108,9 +108,6 @@ export default function Hero() {
           </motion.div>
           <div className="absolute inset-0 bg-gradient-to-tr from-[#2E3192]/25 via-transparent to-transparent" />
           <div className="absolute top-6 left-6 w-3 h-3 bg-[#E1251B]" />
-          <div className="absolute bottom-6 right-6 font-mono text-[10px] uppercase tracking-widest text-white/80 bg-[#0B1533]/40 backdrop-blur-sm px-3 py-2">
-            IATF 16949 · ISO 9001 · UL Certified
-          </div>
         </div>
       </div>
 
