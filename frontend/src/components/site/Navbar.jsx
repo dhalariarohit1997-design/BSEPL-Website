@@ -33,36 +33,41 @@ export default function Navbar() {
         scrolled ? "bg-white/90 backdrop-blur-md border-b border-[#E2E6EF]" : "bg-transparent"
       }`}
     >
-      <div className="max-w-[1600px] mx-auto px-6 md:px-12 h-24 flex items-center justify-between">
+      <div className="max-w-[1600px] mx-auto px-6 md:px-12 h-24 flex items-center">
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           data-testid="nav-logo"
-          className="flex items-center gap-3"
+          className="flex items-center shrink-0"
         >
           <img src="/bsepl-logo.png" alt="B.S. Electronics — Complete PCB Solution" className="h-16 md:h-20 w-auto" />
-          <span className="hidden xl:block font-heading font-900 uppercase tracking-tight text-[#E1251B] text-base 2xl:text-lg leading-none whitespace-nowrap" style={{ WebkitTextStroke: "0.4px #E1251B" }}>B.S. Electronics Pvt. Ltd.</span>
         </button>
 
-        <div className="hidden md:flex items-center gap-9">
-          {links.map((l) => (
-            <button
-              key={l.href}
-              data-testid={`nav-link-${l.label.toLowerCase()}`}
-              onClick={() => go(l.href)}
-              className="font-mono text-xs uppercase tracking-widest text-[#5A6684] hover:text-[#2E3192] transition-colors duration-300"
-            >
-              {l.label}
-            </button>
-          ))}
+        <div className="hidden xl:flex flex-1 justify-center px-8">
+          <span className="font-heading font-900 uppercase tracking-tight text-[#E1251B] text-base 2xl:text-lg leading-none whitespace-nowrap" style={{ WebkitTextStroke: "0.4px #E1251B" }}>B.S. Electronics Pvt. Ltd.</span>
         </div>
 
-        <button
-          data-testid="nav-quote-button"
-          onClick={() => go("#quote")}
-          className="font-mono text-xs uppercase tracking-widest bg-[#2E3192] hover:bg-[#3B3FB0] text-white px-5 py-3 transition-colors duration-300 font-700"
-        >
-          Request Quote
-        </button>
+        <div className="flex items-center gap-9 ml-auto xl:ml-0">
+          <div className="hidden md:flex items-center gap-9">
+            {links.map((l) => (
+              <button
+                key={l.href}
+                data-testid={`nav-link-${l.label.toLowerCase()}`}
+                onClick={() => go(l.href)}
+                className="font-mono text-xs uppercase tracking-widest text-[#5A6684] hover:text-[#2E3192] transition-colors duration-300"
+              >
+                {l.label}
+              </button>
+            ))}
+          </div>
+
+          <button
+            data-testid="nav-quote-button"
+            onClick={() => go("#quote")}
+            className="font-mono text-xs uppercase tracking-widest bg-[#2E3192] hover:bg-[#3B3FB0] text-white px-5 py-3 transition-colors duration-300 font-700"
+          >
+            Request Quote
+          </button>
+        </div>
       </div>
     </motion.nav>
   );
