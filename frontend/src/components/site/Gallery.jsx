@@ -22,16 +22,16 @@ const shots = [
   {
     url: "https://images.unsplash.com/photo-1592659762303-90081d34b277?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjV8MHwxfHNlYXJjaHwyfHxwcmludGVkJTIwY2lyY3VpdCUyMGJvYXJkJTIwbWFjcm98ZW58MHx8fHwxNzg2NzIxMjA1fDA&ixlib=rb-4.1.0&q=85",
     alt: "Macro PCB",
-    caption: "4-layer stackup",
+    caption: "Board stackup",
     span: "md:col-span-8 aspect-video",
   },
 ];
 
 export default function Gallery() {
   return (
-    <section id="gallery" data-testid="gallery-section" className="max-w-[1600px] mx-auto px-6 md:px-12 py-24 md:py-32">
-      <p className="font-mono text-xs uppercase tracking-[0.3em] text-copper mb-6">/ Gallery</p>
-      <h2 className="font-heading font-900 uppercase tracking-tighter leading-[0.9] text-5xl md:text-7xl mb-16">
+    <section id="gallery" data-testid="gallery-section" className="max-w-[1600px] mx-auto px-6 md:px-12 py-24 md:py-32 bg-white">
+      <p className="font-mono text-xs uppercase tracking-[0.3em] text-[#2E3192] mb-6">/ Gallery</p>
+      <h2 className="font-heading font-900 uppercase tracking-tighter leading-[0.9] text-5xl md:text-7xl text-[#0B1533] mb-16">
         Made Here.
       </h2>
 
@@ -44,15 +44,16 @@ export default function Gallery() {
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             data-testid={`gallery-item-${i}`}
-            className={`group relative overflow-hidden border border-[#262626] ${s.span}`}
+            className={`group relative overflow-hidden border border-[#E2E6EF] ${s.span}`}
           >
             <img
               src={s.url}
               alt={s.alt}
-              className="w-full h-full object-cover grayscale group-hover:grayscale-0 scale-100 group-hover:scale-105 transition-all duration-700 ease-out"
+              className="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-700 ease-out"
             />
-            <figcaption className="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-black/80 to-transparent font-mono text-xs uppercase tracking-widest text-white translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-              <span className="text-copper">— </span>{s.caption}
+            <div className="absolute inset-0 ring-0 group-hover:ring-4 ring-inset ring-[#2E3192]/40 transition-all duration-500 pointer-events-none" />
+            <figcaption className="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-[#0B1533]/80 to-transparent font-mono text-xs uppercase tracking-widest text-white translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+              <span className="text-white/60">— </span>{s.caption}
             </figcaption>
           </motion.figure>
         ))}

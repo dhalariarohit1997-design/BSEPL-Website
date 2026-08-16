@@ -18,8 +18,8 @@ module.exports = {
       },
       colors: {
         copper: {
-          DEFAULT: '#D97706',
-          hover: '#F59E0B'
+          DEFAULT: '#2E3192',
+          hover: '#3B3FB0'
         },
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',

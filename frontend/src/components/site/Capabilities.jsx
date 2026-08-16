@@ -25,48 +25,49 @@ const reveal = {
 
 export default function Capabilities() {
   return (
-    <section id="capabilities" data-testid="capabilities-section" className="max-w-[1600px] mx-auto px-6 md:px-12 py-24 md:py-32">
-      <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-        <div>
-          <p className="font-mono text-xs uppercase tracking-[0.3em] text-copper mb-6">/ Capabilities</p>
-          <h2 className="font-heading font-900 uppercase tracking-tighter leading-[0.9] text-5xl md:text-7xl">
-            The Spec Sheet
-          </h2>
+    <section id="capabilities" data-testid="capabilities-section" className="bg-[#F7F8FA] border-y border-[#E2E6EF]">
+      <div className="max-w-[1600px] mx-auto px-6 md:px-12 py-24 md:py-32">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+          <div>
+            <p className="font-mono text-xs uppercase tracking-[0.3em] text-[#2E3192] mb-6">/ Capabilities</p>
+            <h2 className="font-heading font-900 uppercase tracking-tighter leading-[0.9] text-5xl md:text-7xl text-[#0B1533]">
+              The Spec Sheet
+            </h2>
+          </div>
+          <p className="font-mono text-sm text-[#5A6684] max-w-sm leading-relaxed">
+            A fabrication window tuned for reliability, across single-sided, double-sided and metal-clad boards. Need something outside these bounds? Ask — we engineer to fit.
+          </p>
         </div>
-        <p className="font-mono text-sm text-[#A3A3A3] max-w-sm leading-relaxed">
-          A fabrication window tuned for reliability, across single-sided, double-sided and metal-clad boards. Need something outside these bounds? Ask — we engineer to fit.
-        </p>
-      </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-px bg-[#262626]">
-        {cells.map((c, i) => {
-          const Icon = c.icon;
-          return (
-            <motion.div
-              key={i}
-              custom={i}
-              variants={reveal}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-60px" }}
-              data-testid={`capability-cell-${i}`}
-              className={`group relative bg-[#0A0A0A] p-8 md:p-10 overflow-hidden ${c.span} flex flex-col justify-between min-h-[180px] ${c.big ? "md:min-h-[380px]" : ""}`}
-            >
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-copper/10 to-transparent pointer-events-none" />
-              <div className="flex items-start justify-between">
-                <span className="font-mono text-xs uppercase tracking-widest text-[#A3A3A3]">{c.label}</span>
-                <Icon className="w-5 h-5 text-[#404040] group-hover:text-copper transition-colors duration-300" strokeWidth={1.5} />
-              </div>
-              <div>
-                <div className={`font-heading font-900 tracking-tighter leading-none ${c.big ? "text-7xl md:text-9xl" : "text-5xl md:text-6xl"}`}>
-                  {c.value}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-px bg-[#E2E6EF] border border-[#E2E6EF]">
+          {cells.map((c, i) => {
+            const Icon = c.icon;
+            return (
+              <motion.div
+                key={i}
+                custom={i}
+                variants={reveal}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-60px" }}
+                data-testid={`capability-cell-${i}`}
+                className={`group relative bg-white p-8 md:p-10 overflow-hidden ${c.span} flex flex-col justify-between min-h-[180px] ${c.big ? "md:min-h-[380px]" : ""} hover:bg-[#F2F4FA] transition-colors duration-300`}
+              >
+                <div className="flex items-start justify-between">
+                  <span className="font-mono text-xs uppercase tracking-widest text-[#5A6684]">{c.label}</span>
+                  <Icon className="w-5 h-5 text-[#C7CEDE] group-hover:text-[#2E3192] transition-colors duration-300" strokeWidth={1.5} />
                 </div>
-                <div className="font-mono text-sm text-copper mt-2">{c.unit}</div>
-                {c.desc && <p className="font-mono text-sm text-[#A3A3A3] mt-6 max-w-md leading-relaxed">{c.desc}</p>}
-              </div>
-            </motion.div>
-          );
-        })}
+                <div>
+                  <div className={`font-heading font-900 tracking-tighter leading-none text-[#0B1533] ${c.big ? "text-7xl md:text-9xl" : "text-5xl md:text-6xl"}`}>
+                    {c.value}
+                  </div>
+                  <div className="font-mono text-sm text-[#2E3192] mt-2">{c.unit}</div>
+                  {c.desc && <p className="font-mono text-sm text-[#5A6684] mt-6 max-w-md leading-relaxed">{c.desc}</p>}
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

@@ -8,7 +8,7 @@ import Home from "@/pages/Home";
 function App() {
   return (
     <ReactLenis root options={{ lerp: 0.08, smoothWheel: true }}>
-      <div className="App bg-[#050505] min-h-screen">
+      <div className="App bg-white min-h-screen">
         <GrainOverlay />
         <BrowserRouter>
           <Routes>

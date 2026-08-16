@@ -1,5 +1,4 @@
 import { useState, useRef } from "react";
-import { motion } from "framer-motion";
 import axios from "axios";
 import { toast } from "sonner";
 import { UploadCloud, FileCheck2, Loader2, ArrowRight } from "lucide-react";
@@ -49,17 +48,17 @@ export default function QuoteForm() {
   };
 
   const inputCls =
-    "w-full bg-[#0A0A0A] border border-[#262626] focus:border-copper outline-none px-4 py-4 font-mono text-sm text-white placeholder:text-[#525252] transition-colors duration-300 rounded-none";
+    "w-full bg-white border border-[#E2E6EF] focus:border-[#2E3192] outline-none px-4 py-4 font-mono text-sm text-[#0B1533] placeholder:text-[#9AA6BD] transition-colors duration-300 rounded-none";
 
   return (
-    <section id="quote" data-testid="quote-section" className="border-t border-[#262626] bg-[#0A0A0A]">
+    <section id="quote" data-testid="quote-section" className="border-t border-[#E2E6EF] bg-[#F7F8FA]">
       <div className="max-w-[1600px] mx-auto px-6 md:px-12 py-24 md:py-32 grid grid-cols-1 lg:grid-cols-12 gap-16">
         <div className="lg:col-span-4">
-          <p className="font-mono text-xs uppercase tracking-[0.3em] text-copper mb-6">/ Request a Quote</p>
-          <h2 className="font-heading font-900 uppercase tracking-tighter leading-[0.9] text-5xl md:text-7xl mb-8">
+          <p className="font-mono text-xs uppercase tracking-[0.3em] text-[#2E3192] mb-6">/ Request a Quote</p>
+          <h2 className="font-heading font-900 uppercase tracking-tighter leading-[0.9] text-5xl md:text-7xl text-[#0B1533] mb-8">
             Send Us<br />Your Board.
           </h2>
-          <p className="font-mono text-sm text-[#A3A3A3] leading-relaxed max-w-sm">
+          <p className="font-mono text-sm text-[#5A6684] leading-relaxed max-w-sm">
             Attach your Gerber or design files (ZIP), tell us the spec, and get a
             fabrication quote back fast. Single-sided, double-sided & metal-clad —
             proto to production.
@@ -73,7 +72,7 @@ export default function QuoteForm() {
           <input data-testid="quote-phone" className={inputCls} placeholder="Phone" value={form.phone} onChange={set("phone")} />
 
           <select data-testid="quote-layers" className={inputCls} value={form.layers} onChange={set("layers")}>
-            {layerOptions.map((o) => <option key={o} value={o} className="bg-[#0A0A0A]">{o}</option>)}
+            {layerOptions.map((o) => <option key={o} value={o}>{o}</option>)}
           </select>
           <input data-testid="quote-quantity" className={inputCls} placeholder="Quantity (pcs) *" value={form.quantity} onChange={set("quantity")} />
 
@@ -85,20 +84,20 @@ export default function QuoteForm() {
             onDragOver={(e) => { e.preventDefault(); setDragging(true); }}
             onDragLeave={() => setDragging(false)}
             onDrop={onDrop}
-            className={`md:col-span-2 cursor-pointer border border-dashed px-6 py-10 flex flex-col items-center justify-center text-center transition-colors duration-300 ${
-              dragging ? "border-copper bg-copper/5" : "border-[#404040] hover:border-copper"
+            className={`md:col-span-2 cursor-pointer border border-dashed px-6 py-10 flex flex-col items-center justify-center text-center transition-colors duration-300 bg-white ${
+              dragging ? "border-[#2E3192] bg-[#2E3192]/5" : "border-[#C7CEDE] hover:border-[#2E3192]"
             }`}
           >
-            <input ref={fileRef} type="file" data-testid="quote-file-input" className="hidden" accept=".zip,.rar,.gbr,.zip,.7z,.rar,.gerber,.pcb,application/zip"
+            <input ref={fileRef} type="file" data-testid="quote-file-input" className="hidden" accept=".zip,.rar,.gbr,.7z,.gerber,.pcb,application/zip"
               onChange={(e) => setFile(e.target.files?.[0] || null)} />
             {file ? (
-              <div className="flex items-center gap-3 font-mono text-sm text-copper">
+              <div className="flex items-center gap-3 font-mono text-sm text-[#2E3192]">
                 <FileCheck2 className="w-5 h-5" /> {file.name}
               </div>
             ) : (
               <>
-                <UploadCloud className="w-7 h-7 text-[#525252] mb-3" strokeWidth={1.5} />
-                <span className="font-mono text-sm text-[#A3A3A3]">Drop Gerber / ZIP files here, or click to browse</span>
+                <UploadCloud className="w-7 h-7 text-[#9AA6BD] mb-3" strokeWidth={1.5} />
+                <span className="font-mono text-sm text-[#5A6684]">Drop Gerber / ZIP files here, or click to browse</span>
               </>
             )}
           </div>
@@ -107,7 +106,7 @@ export default function QuoteForm() {
             data-testid="quote-submit-button"
             type="submit"
             disabled={loading}
-            className="md:col-span-2 group flex items-center justify-center gap-3 bg-copper hover:bg-copper-hover disabled:opacity-60 text-[#050505] font-mono font-700 uppercase tracking-widest text-sm px-6 py-5 transition-colors duration-300"
+            className="md:col-span-2 group flex items-center justify-center gap-3 bg-[#2E3192] hover:bg-[#3B3FB0] disabled:opacity-60 text-white font-mono font-700 uppercase tracking-widest text-sm px-6 py-5 transition-colors duration-300"
           >
             {loading ? <><Loader2 className="w-4 h-4 animate-spin" /> Submitting</> : <>Request Quote <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" /></>}
           </button>

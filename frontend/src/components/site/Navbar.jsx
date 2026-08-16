@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { CircuitBoard } from "lucide-react";
 
 const links = [
   { label: "About", href: "#manifesto" },
   { label: "Capabilities", href: "#capabilities" },
+  { label: "Industries", href: "#industries" },
   { label: "Clients", href: "#clients" },
   { label: "Contact", href: "#contact" },
 ];
@@ -30,28 +30,25 @@ export default function Navbar() {
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
       data-testid="navbar"
       className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-500 ${
-        scrolled ? "bg-[#050505]/90 backdrop-blur-md border-b border-[#262626]" : "bg-transparent"
+        scrolled ? "bg-white/90 backdrop-blur-md border-b border-[#E2E6EF]" : "bg-transparent"
       }`}
     >
       <div className="max-w-[1600px] mx-auto px-6 md:px-12 h-20 flex items-center justify-between">
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           data-testid="nav-logo"
-          className="flex items-center gap-3 group"
+          className="flex items-center gap-3"
         >
-          <CircuitBoard className="w-6 h-6 text-copper" strokeWidth={1.5} />
-          <span className="font-heading font-900 text-lg tracking-tighter uppercase">
-            B.S.<span className="text-copper">Electronics</span>
-          </span>
+          <img src="/bsepl-logo.png" alt="B.S. Electronics — Complete PCB Solution" className="h-11 md:h-12 w-auto" />
         </button>
 
-        <div className="hidden md:flex items-center gap-10">
+        <div className="hidden md:flex items-center gap-9">
           {links.map((l) => (
             <button
               key={l.href}
               data-testid={`nav-link-${l.label.toLowerCase()}`}
               onClick={() => go(l.href)}
-              className="font-mono text-xs uppercase tracking-widest text-[#A3A3A3] hover:text-copper transition-colors duration-300"
+              className="font-mono text-xs uppercase tracking-widest text-[#5A6684] hover:text-[#2E3192] transition-colors duration-300"
             >
               {l.label}
             </button>
@@ -61,7 +58,7 @@ export default function Navbar() {
         <button
           data-testid="nav-quote-button"
           onClick={() => go("#quote")}
-          className="font-mono text-xs uppercase tracking-widest bg-copper hover:bg-copper-hover text-[#050505] px-5 py-3 transition-colors duration-300 font-700"
+          className="font-mono text-xs uppercase tracking-widest bg-[#2E3192] hover:bg-[#3B3FB0] text-white px-5 py-3 transition-colors duration-300 font-700"
         >
           Request Quote
         </button>
