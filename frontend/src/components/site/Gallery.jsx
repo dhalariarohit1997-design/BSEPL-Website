@@ -13,13 +13,17 @@ const shots = [
   { url: "/factory/factory9.jpeg", alt: "PCB panel inspection and measurement station" },
 ];
 
+// Group images into pairs (2 per slide)
+const pages = [];
+for (let i = 0; i < shots.length; i += 2) pages.push(shots.slice(i, i + 2));
+
 export default function Gallery() {
   const [index, setIndex] = useState(0);
   const [dir, setDir] = useState(1);
 
   const go = useCallback((n) => {
     setDir(n);
-    setIndex((prev) => (prev + n + shots.length) % shots.length);
+    setIndex((prev) => (prev + n + pages.length) % pages.length);
   }, []);
 
   const goTo = (i) => {
@@ -28,7 +32,7 @@ export default function Gallery() {
   };
 
   useEffect(() => {
-    const t = setInterval(() => go(1), 4500);
+    const t = setInterval(() => go(1), 5000);
     return () => clearInterval(t);
   }, [go]);
 
@@ -42,27 +46,33 @@ export default function Gallery() {
         A look inside our manufacturing floor — from imaging and plating to drilling, fabrication and process control.
       </p>
 
-      <div className="relative w-full aspect-[16/9] overflow-hidden border border-[#E2E6EF] bg-[#0B1533]" data-testid="gallery-slideshow">
-        <AnimatePresence initial={false} custom={dir} mode="popLayout">
-          <motion.img
-            key={index}
-            src={shots[index].url}
-            alt={shots[index].alt}
-            custom={dir}
-            initial={{ opacity: 0, x: dir * 80 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: dir * -80 }}
-            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            data-testid="gallery-current-slide"
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-        </AnimatePresence>
+      <div className="relative w-full" data-testid="gallery-slideshow">
+        <div className="relative w-full overflow-hidden">
+          <AnimatePresence initial={false} custom={dir} mode="wait">
+            <motion.div
+              key={index}
+              custom={dir}
+              initial={{ opacity: 0, x: dir * 60 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: dir * -60 }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              data-testid="gallery-current-slide"
+              className="grid grid-cols-1 md:grid-cols-2 gap-4"
+            >
+              {pages[index].map((s, i) => (
+                <figure key={i} className="relative aspect-[4/3] overflow-hidden border border-[#E2E6EF] bg-[#0B1533]">
+                  <img src={s.url} alt={s.alt} className="w-full h-full object-cover" />
+                </figure>
+              ))}
+            </motion.div>
+          </AnimatePresence>
+        </div>
 
         <button
           onClick={() => go(-1)}
           data-testid="gallery-prev"
           aria-label="Previous slide"
-          className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 flex items-center justify-center bg-white/90 hover:bg-[#2E3192] hover:text-white text-[#0B1533] transition-colors duration-300"
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 flex items-center justify-center bg-white/90 hover:bg-[#2E3192] hover:text-white text-[#0B1533] shadow-md transition-colors duration-300"
         >
           <ChevronLeft className="w-6 h-6" />
         </button>
@@ -70,25 +80,26 @@ export default function Gallery() {
           onClick={() => go(1)}
           data-testid="gallery-next"
           aria-label="Next slide"
-          className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 flex items-center justify-center bg-white/90 hover:bg-[#2E3192] hover:text-white text-[#0B1533] transition-colors duration-300"
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 flex items-center justify-center bg-white/90 hover:bg-[#2E3192] hover:text-white text-[#0B1533] shadow-md transition-colors duration-300"
         >
           <ChevronRight className="w-6 h-6" />
         </button>
+      </div>
 
-        <div className="absolute top-4 right-4 z-10 font-mono text-xs uppercase tracking-widest text-white bg-[#0B1533]/50 backdrop-blur-sm px-3 py-1.5" data-testid="gallery-counter">
-          {String(index + 1).padStart(2, "0")} / {String(shots.length).padStart(2, "0")}
-        </div>
-
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 flex gap-2">
-          {shots.map((_, i) => (
+      <div className="flex items-center justify-between mt-6">
+        <div className="flex gap-2">
+          {pages.map((_, i) => (
             <button
               key={i}
               onClick={() => goTo(i)}
               data-testid={`gallery-dot-${i}`}
               aria-label={`Go to slide ${i + 1}`}
-              className={`h-1.5 transition-all duration-300 ${i === index ? "w-8 bg-white" : "w-3 bg-white/50 hover:bg-white/80"}`}
+              className={`h-1.5 transition-all duration-300 ${i === index ? "w-10 bg-[#2E3192]" : "w-4 bg-[#C7CEDE] hover:bg-[#5A6684]"}`}
             />
           ))}
+        </div>
+        <div className="font-mono text-xs uppercase tracking-widest text-[#5A6684]" data-testid="gallery-counter">
+          {String(index + 1).padStart(2, "0")} / {String(pages.length).padStart(2, "0")}
         </div>
       </div>
     </section>
