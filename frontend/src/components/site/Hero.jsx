@@ -38,7 +38,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="font-mono text-sm md:text-base font-700 uppercase tracking-[0.2em] text-[#E1251B] mb-6"
+            className="font-heading text-xl md:text-3xl font-900 uppercase tracking-[0.15em] text-[#E1251B] mb-6"
           >
             B.S. Electronics Pvt. Ltd.
           </motion.p>
