@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
 
 const clients = [
-  { name: "Havells", logo: "/clients/havells.png" },
-  { name: "Livguard", logo: "/clients/livguard.png" },
-  { name: "Phoenix Contact", logo: "/clients/phoenix.png" },
-  { name: "Lava International", logo: "/clients/lava.png" },
+  { name: "Havells", logo: "/clients/havells.png", fit: "cover" },
+  { name: "Livguard", logo: "/clients/livguard.png", fit: "cover" },
+  { name: "Phoenix Contact", logo: "/clients/phoenix.webp", fit: "contain" },
+  { name: "Lava International", logo: "/clients/lava.png", fit: "cover" },
   { name: "Deltron (CDIL)", logo: null },
-  { name: "Elin Electronics", logo: "/clients/elin.png" },
+  { name: "Elin Electronics", logo: "/clients/elin.png", fit: "cover" },
 ];
 
 export default function Clients() {
@@ -28,18 +28,24 @@ export default function Clients() {
             viewport={{ once: true, margin: "-40px" }}
             transition={{ duration: 0.6, delay: i * 0.06, ease: [0.16, 1, 0.3, 1] }}
             data-testid={`client-${i}`}
-            className="group bg-white p-10 flex items-center justify-center min-h-[160px] hover:bg-[#F2F4FA] transition-colors duration-300"
+            className="group relative bg-white overflow-hidden aspect-[16/9] flex items-center justify-center"
           >
-            {c.logo ? (
+            {!c.logo ? (
+              <span className="font-heading font-900 uppercase tracking-tighter text-2xl md:text-3xl text-[#0B1533] group-hover:text-[#2E3192] transition-colors duration-300 text-center leading-tight px-4">
+                {c.name}
+              </span>
+            ) : c.fit === "cover" ? (
               <img
                 src={c.logo}
                 alt={c.name}
-                className="max-h-16 md:max-h-20 w-auto object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
+                className="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-500"
               />
             ) : (
-              <span className="font-heading font-900 uppercase tracking-tighter text-2xl md:text-3xl text-[#0B1533] group-hover:text-[#2E3192] transition-colors duration-300 text-center leading-tight">
-                {c.name}
-              </span>
+              <img
+                src={c.logo}
+                alt={c.name}
+                className="max-h-[55%] w-auto object-contain transition-transform duration-500 group-hover:scale-105"
+              />
             )}
           </motion.div>
         ))}
