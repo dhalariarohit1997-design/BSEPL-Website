@@ -59,9 +59,9 @@ export default function Hero() {
             transition={{ delay: 1.2, duration: 0.8 }}
             className="mt-8 max-w-xl font-mono text-sm md:text-base text-[#5A6684] leading-relaxed"
           >
-            Single-sided, double-sided & metal-clad printed circuit boards.
-            Manufactured in Haryana since 1996 for automotive, industrial automation,
-            consumer electronics and LED lighting.
+            One stop solution for all your PCB needs — single-sided, double-sided &
+            metal-clad printed circuit boards. We build circuits and relationships
+            that last forever.
           </motion.p>
 
           <motion.div

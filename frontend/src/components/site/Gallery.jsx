@@ -7,6 +7,8 @@ const shots = [
   { url: "/factory/factory6.jpeg", alt: "Operators at punching machines" },
   { url: "/factory/factory5.jpeg", alt: "Wet process rinsing tanks" },
   { url: "/factory/factory4.jpeg", alt: "Operator at machine control panel" },
+  { url: "/factory/factory8.jpeg", alt: "Operator running a PCB processing machine" },
+  { url: "/factory/factory9.jpeg", alt: "PCB panel inspection and measurement station" },
 ];
 
 export default function Gallery() {
@@ -20,14 +22,14 @@ export default function Gallery() {
         A look inside our manufacturing floor — from imaging and plating to drilling, fabrication and process control.
       </p>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-[#E2E6EF] border border-[#E2E6EF]">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-[#E2E6EF] border border-[#E2E6EF]">
         {shots.map((s, i) => (
           <motion.figure
             key={i}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.7, delay: (i % 3) * 0.08, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.7, delay: (i % 4) * 0.08, ease: [0.16, 1, 0.3, 1] }}
             data-testid={`gallery-item-${i}`}
             className="group relative overflow-hidden bg-white aspect-[4/3]"
           >
