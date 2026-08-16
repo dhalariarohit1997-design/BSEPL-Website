@@ -50,7 +50,7 @@ export default function Navbar() {
               key={l.href}
               data-testid={`nav-link-${l.label.toLowerCase()}`}
               onClick={() => go(l.href)}
-              className="font-mono text-xs uppercase tracking-widest text-[#5A6684] hover:text-[#2E3192] transition-colors duration-300"
+              className="font-mono text-xs uppercase tracking-widest text-black hover:text-[#2E3192] transition-colors duration-300"
             >
               {l.label}
             </button>
