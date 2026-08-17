@@ -1,6 +1,32 @@
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef, useState, useEffect } from "react";
+import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
+
+function CountUp({ value, duration = 1.8, delay = 0 }) {
+  const match = String(value).match(/^(\d+)(.*)$/);
+  const target = match ? parseInt(match[1], 10) : null;
+  const suffix = match ? match[2] : "";
+  const [n, setN] = useState(0);
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-40px" });
+
+  useEffect(() => {
+    if (target === null || !inView) return;
+    let raf;
+    const start = performance.now() + delay * 1000;
+    const tick = (now) => {
+      const t = Math.min(1, Math.max(0, (now - start) / (duration * 1000)));
+      const eased = 1 - Math.pow(1 - t, 3);
+      setN(Math.round(eased * target));
+      if (t < 1) raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, [inView, target, duration, delay]);
+
+  if (target === null) return <span ref={ref}>{value}</span>;
+  return <span ref={ref}>{n}{suffix}</span>;
+}
 
 const HERO_IMG =
   "https://images.unsplash.com/photo-1592659762303-90081d34b277?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjV8MHwxfHNlYXJjaHwyfHxwcmludGVkJTIwY2lyY3VpdCUyMGJvYXJkJTIwbWFjcm98ZW58MHx8fHwxNzg2NzIxMjA1fDA&ixlib=rb-4.1.0&q=85";
@@ -88,7 +114,9 @@ export default function Hero() {
               const isBlue = i % 2 === 1;
               return (
                 <div key={s.k} className={`${isBlue ? "bg-[#2E3192]" : "bg-white"} px-5 py-6`}>
-                  <div className={`font-heading font-900 text-3xl md:text-4xl tracking-tight ${isBlue ? "text-white" : "text-[#0B1533]"}`}>{s.k}</div>
+                  <div className={`font-heading font-900 text-3xl md:text-4xl tracking-tight ${isBlue ? "text-white" : "text-[#0B1533]"}`}>
+                    <CountUp value={s.k} delay={0.3 + i * 0.15} />
+                  </div>
                   <div className={`font-mono text-[10px] md:text-xs uppercase tracking-wider mt-2 leading-tight ${isBlue ? "text-white/70" : "text-[#5A6684]"}`}>{s.v}</div>
                 </div>
               );
