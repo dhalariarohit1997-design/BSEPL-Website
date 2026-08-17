@@ -6,7 +6,6 @@ const links = [
   { label: "Capabilities", href: "#capabilities" },
   { label: "Quality Certifications", href: "#certifications" },
   { label: "Gallery", href: "#gallery" },
-  { label: "Contact", href: "#contact" },
 ];
 
 export default function Navbar() {
