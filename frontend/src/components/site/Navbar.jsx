@@ -58,11 +58,11 @@ export default function Navbar() {
         </div>
 
         <button
-          data-testid="nav-quote-button"
-          onClick={() => go("#quote")}
+          data-testid="nav-contact-button"
+          onClick={() => go("#contact")}
           className="font-mono text-xs uppercase tracking-widest bg-[#2E3192] hover:bg-[#3B3FB0] text-white px-5 py-3 transition-colors duration-300 font-700 ml-auto"
         >
-          Request Quote
+          Contact Us
         </button>
       </div>
     </motion.nav>

@@ -88,11 +88,11 @@ export default function Hero() {
             className="mt-10 flex flex-wrap gap-4"
           >
             <button
-              data-testid="hero-quote-button"
-              onClick={() => scrollTo("#quote")}
+              data-testid="hero-contact-button"
+              onClick={() => scrollTo("#contact")}
               className="group flex items-center gap-2 bg-[#2E3192] hover:bg-[#3B3FB0] text-white font-mono font-700 uppercase tracking-widest text-xs px-6 py-4 transition-colors duration-300"
             >
-              Request a Quote
+              Get in Touch
               <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
             </button>
             <button

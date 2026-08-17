@@ -15,10 +15,15 @@ export default function Contact() {
           <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-px bg-[#E2E6EF] border border-[#E2E6EF]">
             <div data-testid="contact-detail-address" className="bg-white p-8 sm:col-span-2">
               <MapPin className="w-5 h-5 text-[#2E3192] mb-4" strokeWidth={1.5} />
-              <p className="font-mono text-xs uppercase tracking-widest text-[#5A6684] mb-2">Address</p>
-              <p className="font-mono text-sm text-[#0B1533] leading-relaxed">
-                Plot No. 327, Phase-V, Sector-56, EHTP Industrial Area, Kundli, Sonepat, Haryana 131028, India
-              </p>
+              <p className="font-mono text-xs uppercase tracking-widest text-[#5A6684] mb-4">Address</p>
+              <div className="space-y-4">
+                <p className="font-mono text-sm text-[#0B1533] leading-relaxed">
+                  <span className="text-[#2E3192] font-700">Unit I — </span>327, Phase-V, Sector-56, EHTP Industrial Area, Kundli, Sonepat, Haryana 131028, India
+                </p>
+                <p className="font-mono text-sm text-[#0B1533] leading-relaxed">
+                  <span className="text-[#2E3192] font-700">Unit II — </span>239, Phase-V, Sector-56, EHTP Industrial Area, Kundli, Sonepat, Haryana 131028, India
+                </p>
+              </div>
             </div>
             <div data-testid="contact-detail-phone" className="bg-[#2E3192] p-8">
               <Phone className="w-5 h-5 text-white mb-4" strokeWidth={1.5} />

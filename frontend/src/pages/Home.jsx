@@ -7,7 +7,6 @@ import Industries from "@/components/site/Industries";
 import Gallery from "@/components/site/Gallery";
 import Certifications from "@/components/site/Certifications";
 import Clients from "@/components/site/Clients";
-import QuoteForm from "@/components/site/QuoteForm";
 import Contact from "@/components/site/Contact";
 
 export default function Home() {
@@ -22,7 +21,6 @@ export default function Home() {
       <Industries />
       <Clients />
       <Gallery />
-      <QuoteForm />
       <Contact />
     </main>
   );
